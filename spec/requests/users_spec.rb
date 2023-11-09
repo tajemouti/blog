@@ -21,7 +21,7 @@ RSpec.describe 'Users controller', type: :request do
 
   describe 'GET /users/user_id' do
     before do
-      user = User.create(name: 'Example User', post_counter: 0)
+      user = User.create(name: 'Tom', photo: 'https://example.com/photo.jpg', post_counter: 0)
       get user_path(user)
     end
 

@@ -1,0 +1,25 @@
+* {
+  text-decoration: none;
+}
+
+.user-list {
+  list-style: none;
+  padding: 0;
+}
+
+.user.card {
+  display: flex;
+}
+
+.user-card,
+.user-bio {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.user-photo {
+  width: 100px;
+  height: auto;
+  margin-right: 10px;
+}

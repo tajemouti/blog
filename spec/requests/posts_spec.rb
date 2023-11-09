@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Posts controller', type: :request do
   describe 'GET /users/user_id/posts' do
     before do
-      user = User.create(name: 'Tom', post_counter: 0)
+      user = User.create(name: 'Tom', post_counter: 0, photo: 'https://example.com/photo.jpg')
       get user_posts_path(user)
     end
 
@@ -22,7 +22,7 @@ RSpec.describe 'Posts controller', type: :request do
 
   describe 'GET /users/user_id/posts/post_id' do
     before do
-      user = User.create(name: 'Tom', post_counter: 0)
+      user = User.create(name: 'Tom', post_counter: 0, photo: 'https://example.com/photo.jpg')
       post = user.posts.create(title: 'My Post', comments_counter: 0, likes_counter: 0)
       get user_post_path(user, post)
     end

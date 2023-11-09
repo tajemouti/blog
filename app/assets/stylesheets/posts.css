@@ -1,0 +1,23 @@
+.user-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-photo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.post {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.post-comments {
+  margin-top: 15px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}

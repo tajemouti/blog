@@ -1,1 +1,32 @@
 <h1>Specific User</h1>
+
+<div class="user-card">
+  <%= image_tag(@user.photo, alt: @user.name, class: "user-photo") %>
+  <div class="user-details">
+    <h2><%= @user.name %></h2>
+    <p>Number of posts: <%= @user.posts.count %></p>
+  </div>
+</div>
+
+<div class="user-bio">
+  <h2>Bio</h2>
+  <p>
+    <%= @user.bio %>
+  </p>
+</div>
+
+<div class="user-posts">
+  <% @user.posts.limit(3).each do |post| %>
+    <div class="post">
+      <h2><%= link_to "#{post.title}", user_post_path(post.author, post) %></h2>
+      <p><%= post.text %></p>
+      <p class="counter">Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+    </div>
+  <% end %>
+
+  <% if @user.posts.count > 3 %>
+    <button class="see-all-posts">
+      <%= link_to "See all posts", user_posts_path(@user) %>
+    </button>
+  <% end %>
+</div>
