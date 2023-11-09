@@ -5,8 +5,8 @@
     <li class="user-card">
       <%= image_tag(user.photo, alt: user.name, class: "user-photo") %>
       <div class="user-details">
-      <%= link_to user_path(user) do %>
-        <h2><%= user.name %></h2>
+        <%= link_to user_path(user) do %>
+          <h2><%= user.name %></h2>
         <% end %>
         <p>Number of posts: <%= user.posts.count %></p>
       </div>
