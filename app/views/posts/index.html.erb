@@ -15,7 +15,7 @@
       <p><%= post.text %></p>
       <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
     </div>
-    <div class="post-coments">
+    <div class="post-comments">
       <% post.recent_comments.each do |comment| %>
         <p>
           <strong><%= comment.user.name %> :</strong> <%= comment.text %>
