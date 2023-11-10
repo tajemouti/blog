@@ -7,10 +7,6 @@
   padding: 0;
 }
 
-.user.card {
-  display: flex;
-}
-
 .user-card,
 .user-bio {
   border: 1px solid #ddd;
