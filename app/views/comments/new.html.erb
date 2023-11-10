@@ -1,0 +1,12 @@
+<%= link_to 'Back', user_post_path(@post.author, @post) %>
+
+<h1>Add comment</h1>
+
+<%= form_with(model: [@post, @comment], url: user_post_comments_path(@post.author, @post), class: "form") do |form| %>
+  <%= form.label :text %>
+  <%= form.text_area :text %>
+
+  <%= form.submit 'Add comment' %>
+<% end %>
+
+

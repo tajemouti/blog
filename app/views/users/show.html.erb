@@ -1,4 +1,10 @@
+<%= link_to 'Back', users_path %>
+
 <h1>Specific User</h1>
+
+<button>
+  <%= link_to "New post", new_user_post_path(@user), class: "back" %>
+</button>
 
 <div class="user-card">
   <%= image_tag(@user.photo, alt: @user.name, class: "user-photo") %>
@@ -26,7 +32,7 @@
 
   <% if @user.posts.count > 3 %>
     <button class="see-all-posts">
-      <%= link_to "See all posts", user_posts_path(@user) %>
+      <%= link_to "See all posts", user_posts_path(@user), class: "back" %>
     </button>
   <% end %>
 </div>

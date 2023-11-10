@@ -1,0 +1,13 @@
+<%= link_to 'Back', user_posts_path(@user) %>
+<h1>Create a new post</h1>
+
+<%= form_with(model: [@user, @post], url: user_posts_path(@user)) do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+
+  <%= form.label :text %>
+  <%= form.text_area :text %>
+
+  <%= form.submit "Create Post" %>
+<% end %>
+
