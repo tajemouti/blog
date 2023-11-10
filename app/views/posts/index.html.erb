@@ -1,4 +1,9 @@
+<%= link_to 'Back', users_path %>
 <h1>All posts by User</h1>
+
+<button>
+  <%= link_to "New post", new_user_post_path(@user), class: "back" %>
+</button>
 
 <div class="user-card">
   <%= image_tag(@user.photo, alt: @user.name, class: "user-photo") %>
@@ -9,13 +14,15 @@
 </div>
 
 <% @posts.each do |post| %>
-  <div class="post">.
+  <div class="post">
     <div class="post-body">
       <h2><%= link_to "#{post.title}", user_post_path(post.author, post) %></h2>
       <p><%= post.text %></p>
       <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
     </div>
+
     <div class="post-comments">
+      <%= link_to "Add comment", new_user_post_comment_path(post.author, post) %>
       <% post.recent_comments.each do |comment| %>
         <p>
           <strong><%= comment.user.name %> :</strong> <%= comment.text %>
@@ -24,3 +31,4 @@
     </div>
   </div>
 <% end %>
+
