@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.feature 'User show page' do
-    let!(:user1) { User.create(name: 'Ajrass', bio: 'A student from Morocco', photo: 'https://avatars.githubusercontent.com/u/130588108?v=4') }
-    let!(:post1) { Post.create(author: user1, title: 'Post 01') }
-    let!(:post2) { Post.create(author: user1, title: 'Post 02') }
-    let!(:post3) { Post.create(author: user1, title: 'Post 03') }
-    let!(:post4) { Post.create(author: user1, title: 'Post 04') }
+  let!(:user1) { User.create(name: 'Ajrass', bio: 'A student from Morocco', photo: 'https://avatars.githubusercontent.com/u/130588108?v=4') }
+  let!(:post1) { Post.create(author: user1, title: 'Post 01') }
+  let!(:post2) { Post.create(author: user1, title: 'Post 02') }
+  let!(:post3) { Post.create(author: user1, title: 'Post 03') }
+  let!(:post4) { Post.create(author: user1, title: 'Post 04') }
 
   scenario 'Displays user Profile picture, username, bio and number of posts' do
     visit user_path(user1)

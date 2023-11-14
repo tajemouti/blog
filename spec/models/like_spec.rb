@@ -4,7 +4,7 @@ RSpec.describe Like, type: :model do
   it 'is valid with a user and a post' do
     user = User.create(name: 'John')
     post = Post.create(author: user, title: 'My Post')
-    like = Like.new(user: user, post: post)
+    like = Like.new(user:, post:)
     expect(like).to be_valid
   end
 
@@ -18,7 +18,7 @@ RSpec.describe Like, type: :model do
   it 'updates the likes counter for a post' do
     user = User.create(name: 'John')
     post = Post.create(author: user, title: 'My Post')
-    like = Like.create(user: user, post: post)
+    like = Like.create(user:, post:)
 
     like.increment_post_likes_counter
 

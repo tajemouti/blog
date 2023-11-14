@@ -8,7 +8,7 @@ RSpec.describe Post, type: :model do
   end
 
   it 'is not valid without a title' do
-    user = User.create(name: 'Tom')
+    User.create(name: 'Tom')
     post = Post.new(title: nil)
     post.valid?
     expect(post.errors[:title]).to include("can't be blank")
@@ -29,7 +29,7 @@ RSpec.describe Post, type: :model do
   end
 
   it 'is not valid with a negative likes_counter' do
-    user = User.create(name: 'Tom')
+    User.create(name: 'Tom')
     post = Post.new(title: 'My Post', likes_counter: -1)
     post.valid?
     expect(post.errors[:likes_counter]).to include('must be greater than or equal to 0')
@@ -48,7 +48,7 @@ RSpec.describe Post, type: :model do
   it 'returns the 5 most recent comments for a post' do
     user = User.create(name: 'Tom')
     post = Post.create(author: user, title: 'My Post')
-    6.times { Comment.create(user: user, post: post, text: 'Nice post!') }
+    6.times { Comment.create(user:, post:, text: 'Nice post!') }
 
     recent_comments = post.recent_comments
 
