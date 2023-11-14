@@ -9,6 +9,7 @@ RSpec.feature 'User show page' do
 
   scenario 'Displays user Profile picture, username, bio and number of posts' do
     visit user_path(user1)
+    expect(page).to have_css("img[src='#{user1.photo}']")
     expect(page).to have_content(user1.name)
     expect(page).to have_content(user1.bio)
     expect(page).to have_content("Number of posts: #{user1.posts_counter}")
