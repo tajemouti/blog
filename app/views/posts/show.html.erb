@@ -19,10 +19,10 @@
 
   <div class="post-comments">
     <strong><%= link_to "Add comment", new_user_post_comment_path(@post.author, @post) %></strong>
-    <% @post.comments.each do |comment| %>
-      <p><strong><%= comment.user.name %>:</strong> <%= comment.text %></p>
-    <% end %>
+    <% @post.comments.includes(:user).each do |comment| %>
+      <p>
+        <strong><%= comment.user.name %> :</strong> <%= comment.text %>
+      </p>
+    <% end %>    
   </div>
 </div>
-
-
