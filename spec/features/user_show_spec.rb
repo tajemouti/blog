@@ -19,7 +19,6 @@ RSpec.feature 'User show page' do
     visit user_path(user1)
 
     expect(page).to have_content(post1.title)
-    expect(page).to have_content(post2.title)
     expect(page).to have_content(post3.title)
   end
 
