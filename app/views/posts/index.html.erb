@@ -23,7 +23,7 @@
 
     <div class="post-comments">
       <%= link_to "Add comment", new_user_post_comment_path(post.author, post) %>
-      <% post.recent_comments.each do |comment| %>
+      <% post.recent_comments.includes(:user).each do |comment| %>
         <p>
           <strong><%= comment.user.name %> :</strong> <%= comment.text %>
         </p>
@@ -32,3 +32,4 @@
   </div>
 <% end %>
 
+<%= will_paginate @posts %>
