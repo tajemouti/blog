@@ -27,4 +27,11 @@ RSpec.feature 'User Post Index Page' do
     expect(page).to have_content(comment2.text)
     expect(page).to have_content("Comments: #{post.comments_counter}")
   end
+
+  scenario 'Redirects to post show page when clicked' do
+    visit user_posts_path(user)
+    click_link post.title
+    sleep(1)
+    expect(current_path).to eq(user_post_path(user, post))
+  end
 end
