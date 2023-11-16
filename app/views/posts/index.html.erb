@@ -6,7 +6,7 @@
 </button>
 
 <div class="user-card">
-  <%= image_tag(@user.photo, alt: @user.name, class: "user-photo") %>
+  <%= image_tag(@user.photo, alt: @user.name, class: "user-photo") if @user.photo.present? %>
   <div class="user-details">
     <h2><%= @user.name %></h2>
     <p>Number of posts: <%= @user.posts.count %></p>
