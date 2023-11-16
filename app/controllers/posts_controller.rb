@@ -38,7 +38,6 @@ class PostsController < ApplicationController
     redirect_to user_posts_path(@user) if @user.save
   end
 
-
   private
 
   def post_params
