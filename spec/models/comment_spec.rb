@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
   it 'is valid with a user and a post' do
-    user = User.create(name: 'Tom', posts_counter: 0)
+    user = User.create(name: 'Tom')
     post = Post.create(author: user, title: 'My Post')
     comment = Comment.new(user:, post:, text: 'Nice post!')
     expect(comment).to be_valid
@@ -24,7 +24,7 @@ RSpec.describe Comment, type: :model do
   end
 
   it 'updates the comments counter for a post' do
-    user = User.create(name: 'Tom')
+    user = User.create(name: 'Tom', email: 'tom@example.com', password: 'password')
     post = Post.create(author: user, title: 'My Post')
     comment = Comment.create(user:, post:, text: 'Nice post!')
 

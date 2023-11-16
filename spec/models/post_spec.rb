@@ -36,7 +36,7 @@ RSpec.describe Post, type: :model do
   end
 
   it 'updates the posts counter for a user' do
-    user = User.create(name: 'Tom', posts_counter: 0)
+    user = User.new(name: 'Tom', email: 'tom@example.com', password: 'password', posts_counter: 0)
     post = Post.create(author: user, title: 'My Post')
 
     post.increment_user_posts_counter
@@ -46,7 +46,7 @@ RSpec.describe Post, type: :model do
   end
 
   it 'returns the 5 most recent comments for a post' do
-    user = User.create(name: 'Tom')
+    user = User.new(name: 'Tom', email: 'tom@example.com', password: 'password')
     post = Post.create(author: user, title: 'My Post')
     6.times { Comment.create(user:, post:, text: 'Nice post!') }
 
