@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   before_action :find_post, only: [:show]
   before_action :initialize_like
 
@@ -25,6 +27,15 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @user = @post.author
+    @post.destroy
+    @user.posts_counter -= 1
+
+    redirect_to user_posts_path(@user) if @user.save
   end
 
   private
