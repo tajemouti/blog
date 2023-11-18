@@ -1,4 +1,4 @@
-class Api::CommentsController < ApiController
+class Api::V1::CommentsController < ApiController
   def index
     @post = Post.find(params[:post_id])
     render json: @post.comments

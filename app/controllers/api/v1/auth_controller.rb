@@ -1,4 +1,4 @@
-class Api::AuthController < ApiController
+class Api::V1::AuthController < ApiController
   skip_before_action :authenticate_token!
 
   def create
