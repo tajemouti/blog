@@ -11,7 +11,7 @@
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Run tests](#run-tests)
-- [👥 Author](#author)
+- [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
@@ -71,11 +71,11 @@ rspec
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 👥 Author <a name="author"></a>
+## 👥 Authors <a name="authors"></a>
 
 - GitHub: [@tajemouti](https://github.com/tajemouti)
-- Twitter: [@AjrassTajemouti](https://twitter.com/AjrassTajemouti)
-- LinkedIn: [ajrass](https://linkedin.com/in/ajrass)
+- GitHub: [@Mike47ip](https://github.com/Mike47ip)
+- GitHub: [@fickryiman](https://github.com/fickryiman)
 
 ## 🔭 Future Features <a name="future-features"></a>
 
