@@ -28,7 +28,7 @@ describe 'Comments API' do
       end
 
       response '422', 'Invalid request' do
-        let(:comment) { { } }
+        let(:comment) { {} }
         run_test!
       end
     end
