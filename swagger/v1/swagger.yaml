@@ -1,0 +1,64 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/auth":
+    post:
+      summary: create authentication
+      responses:
+        '200':
+          description: successful
+  "/api/v1/users/{user_id}/posts/{post_id}/comments":
+    parameters:
+    - name: user_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: post_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Retrieves all comments for a post
+      responses:
+        '200':
+          description: Comments retrieved successfully
+    post:
+      summary: Creates a comment for a post
+      parameters: []
+      responses:
+        '201':
+          description: Comment created successfully
+        '422':
+          description: Invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+              required:
+              - text
+  "/api/v1/users/{user_id}/posts":
+    parameters:
+    - name: user_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Retrieves all posts for a user
+      responses:
+        '200':
+          description: Posts retrieved successfully
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
