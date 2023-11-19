@@ -49,6 +49,7 @@ group :development, :test do
   gem 'debug', platforms: %i[mri windows]
   gem 'devise'
   gem 'rspec-rails'
+  gem 'rswag-specs'
 end
 
 group :development do
@@ -77,3 +78,5 @@ gem 'will_paginate', '~> 3.3'
 gem 'cancancan'
 
 gem 'jwt'
+
+gem 'rswag'
